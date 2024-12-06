@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang ="en">
+
+	<head>
+	
+	<script = "text/javascript">
+	function showRandomFact(){
+		const fossilFuelFacts = ["fossil fuels are formed from ancient plants and animals that lived millions of years ago!", "The largest source of energy for electrical generation in the world is from coal!", "As far as fossil fuels go, natural gas is considered the cleanest fossil fuel as it produces less carbon dioxide compared to coal or oil!", "Petroleum, also known as crude oil, is used to produce gasoline, diesel, and even plastics!"];
+		
+		const randomArray = Math.floor(Math.random() * fossilFuelFacts.length);
+		const randomFact = fossilFuelFacts[randomArray];
+		
+		document.getElementById('fact-display').textContent = randomFact;
+		
+	}
+	</script>
+	</head>
+
+	<body>
+	<div class = "CFRandomArray">
+		<p id="fact-display"><b>Click the button to see a fun fact!</b></p>
+		<button onclick="showRandomFact()" class = "cfFactButton">Show Random Fact</button>
+	</div>
+	</body>
+
+
+
+
+
+<html>
