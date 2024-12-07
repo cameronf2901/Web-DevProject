@@ -79,8 +79,43 @@
 			this.classList.toggle("upright");
 		});
 
+
+
+	let currentSlide = 0;
+		// setting value for currentSlide //
+		function showSlide() {
+		const slides = document.querySelectorAll('.cfSlide');
+		// using querySelector to find css element //
+		// hide all slides//
+		slides.forEach(cfSlide =>{
+		cfSlide.style.display = "none";
+		});
+
+		// Show the current slide //
+		slides[currentSlide].style.display = "block";
+		}
+		//making the function to find next image //
+		function nextSlide() {
+		const slides = document.querySelectorAll('.cfSlide');
+		currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide after the last one
+		showSlide();
+		}
+		// finding previous image //
+		function prevSlide() {
+		const slides = document.querySelectorAll('.cfSlide');
+		currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Loop to the last slide if going back from the first
+		showSlide();
+		}
+
+	// Initially show the first slide
+		showSlide();
+	
+		function changeText() {
+            document.getElementById("pictureButton").innerText = "Click me again!";
+        }
 	</script>
 	
+	<button id = "pictureButton" class = "cfImageButton" onclick="nextSlide(); changeText();">Click to see life without fossil fuels!!</button>
 	
 	
 	
